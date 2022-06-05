@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    </head>
+    <body>
+        <div role="main" class="calculator">
+            <div class="heading">
+                <p>Calc</p>
+                <div class="theme">
+                    <label for="theme-picker">
+                        <input type="radio" name="theme" id="theme-one" checked>
+                        <input type="radio" name="theme" id="theme-two">
+                        <input type="radio" name="theme" id="theme-three">
+                    </label>
+                </div>
+            </div>
+            <div class="display">
+                <p id="answer">399,981</p>
+            </div>
+            <div class="keypad">
+                <button class="num key">7</button>
+                <button class="num key">8</button>
+                <button class="num key">9</button>
+                <button class="key k-del">DEL</button>
+                <button class="num key">4</button>
+                <button class="num key">5</button>
+                <button class="num key">6</button>
+                <button class="key" id="add">+</button>
+                <button class="num key">1</button>
+                <button class="num key">2</button>
+                <button class="num key">3</button>
+                <button class="key" id="subtract">-</button>
+                <button class="key">.</button>
+                <button class="num key">0</button>
+                <button class="key" id="divide">/</button>
+                <button class="key" id="multiply">*</button>
+                <button class="key k-blue">RESET</button>
+                <button class="key k-red">=</button>
+            </div>
+        </div>
+
+        <script src="calc.js" async defer></script>
+    </body>
+</html>
