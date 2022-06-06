@@ -4,6 +4,8 @@
     --body-bg: hsl(222, 26%, 31%);
     --keypad-bg: hsl(223, 31%, 20%);
     --screen-bg: hsl(224, 36%, 15%);
+    --logo-text: #fff; /*Added this to provide continuity in Theme 2 and Theme3*/
+    --key-text: hsl(221, 14%, 31%); /*Added this because of Theme 3*/
     --key-blue: hsl(225, 21%, 49%);
     --key-blueshadow: hsl(224, 28%, 35%);
     --toggle: hsl(6, 63%, 50%);
@@ -22,20 +24,29 @@
 body {
     max-width: 1440px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-family: 'League Spartan', sans-serif;
     font-weight: 700;
     background-color: var(--body-bg);
-    color: var(--text-white);
     font-size: 1rem;
 }
 .calculator {
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
+    margin: 2em auto 0em;
+}
+.theme span {
+    display: inline;
+    font-size: 0.4rem;
+    letter-spacing: 2px;
+}
+.theme-info {
+    display: flex;
 }
 input[type='radio'] {
     visibility: hidden;
+    cursor: pointer;
 }
 input[type='radio']:after {
     width: 15px;
@@ -47,7 +58,6 @@ input[type='radio']:after {
     content: '';
     display: inline-block;
     visibility: visible;
-    /* opacity: 0; */
 }
 input[type='radio']:checked:after {
     width: 15px;
@@ -75,6 +85,7 @@ label {
 .heading {
     display: flex;
     justify-content: space-between;
+    color: var(--logo-text);
 }
 .display {
     background-color: var(--screen-bg);
@@ -83,6 +94,7 @@ label {
     justify-content: flex-end;
     border-radius: 0.2em;
     margin: 0.75em 0em 0.5em;
+    color: var(--logo-text);
 }
 .keypad {
     display: grid;
@@ -100,7 +112,7 @@ label {
     box-shadow: 0 3px var(--key-greyshadow);
     cursor: pointer;
     background-color: var(--key-grey);
-    color: var(--text-blue);
+    color: var(--key-text);
     font-size: 0.75rem;
     font-weight: 700;
 }
@@ -120,4 +132,25 @@ label {
     background-color: var(--key-blue);
     box-shadow: 0 3px var(--key-blueshadow);
     color: var(--text-white);
+}
+footer {
+    text-align: center;
+    margin-top: 1em;
+    color: var(--key-blue);
+}
+footer a, footer a:visited {
+    text-decoration: none;
+    color: var(--key-blue);
+}
+@media (max-width:400px) {
+    .heading, .display, .keypad {
+        width: 10em;
+    }
+    .calculator {
+        margin: 4em auto 0em;
+    }
+    footer {
+        margin-top: 4em;
+        font-size: 0.5rem;
+    }
 }
